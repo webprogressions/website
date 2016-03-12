@@ -1,0 +1,324 @@
+$primary: #1e64b8;
+$primary-text: #fff;
+$secondary: #f3f3f3;
+
+body {
+    background: $secondary;
+    font-family: 'Roboto Slab', 'Helvetica Neue', serif;
+}
+
+.hidden {
+    display: none;
+}
+
+.global-header {
+    background: url('../images/600x300.jpg') top center no-repeat #000;
+    background-attachment: fixed;
+    align-items: center;
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+
+    @media only screen and (min-width: 600px) {
+        background: url('../images/1000x500.jpg') top center no-repeat #000;
+    }
+
+    @media only screen and (min-width: 768px) {
+        height: 500px;
+        background: url('../images/1500x500.jpg') top center no-repeat #000;
+    }
+
+    &__title, &__date, &__subtitle {
+        text-align: center;
+        color: #fff;
+        position: relative;
+        font-family: 'Roboto Slab', serif;
+    }
+
+    &__title {
+        margin-top: 50px;
+
+        @media only screen and (min-width: 600px) {
+            margin-top: 75px;
+        }
+
+        @media only screen and (min-width: 768px) {
+            margin-top: 105px;
+        }
+    }
+
+    &__subtitle {
+        font-size: 22px;
+        margin-top: 10px;
+        max-width: 1000px;
+        margin: 10px auto 15px;
+
+        @media only screen and (min-width: 768px) {
+            font-size: 30px;
+        }
+    }
+
+    &__date {
+        font-size: 20px;
+        margin-top: 10px;
+
+        @media only screen and (min-width: 768px) {
+            font-size:24px;
+        }
+    }
+
+    &:before {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.3);
+    }
+}
+
+.global-footer {
+    background: #000;
+    min-height: 100px;
+    overflow: auto;
+    color: #fff;
+
+    a {
+        color: #fff;
+    }
+}
+
+.content {
+    position: relative;
+}
+
+.info-block {
+    background: #fff;
+    margin: 15px 0;
+    overflow: auto;
+    border-radius: 3px;
+    box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.10);
+    padding: 15px;
+
+    @media only screen and (min-width: 768px) {
+        padding: 20px;
+        margin: 30px 0;
+    }
+
+    &:first-child {
+        margin-top: -80px;
+        z-index: 999;
+        border-radius: 3px 3px 0 0;
+        box-shadow: none;
+
+        @media only screen and (max-width: 767px) {
+            display: none
+        }
+    }
+
+    *:first-child {
+        margin-top: 0;
+    }
+
+    *:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.nav {
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: auto;
+    }
+
+    &__item {
+        float: left;
+        margin: 0px;
+        padding: 0;
+        line-height: 20px;
+        font-size: 20px;
+
+        a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            color: #000;
+        }
+        
+        &--active {
+            a {
+                background: $primary;
+                color: $primary-text;
+            }
+        }
+    }
+}
+
+.schedule {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: auto;
+
+    &__item {
+        margin: 0px 0px 10px;
+        display: table;
+        width: 100%;
+        border-radius: 3px;
+        overflow: hidden;
+    }
+
+    &__item-wrap {
+        display: table-row;
+    }
+    
+    &__time, &__detail {
+        display: table-cell;
+        vertical-align: middle;
+        height: 90px;
+        padding: 15px;
+
+        @media only screen and (min-width: 768px) {
+            padding: 20px;
+        }
+
+        * {
+            margin: 0px;
+        }
+    }
+    
+    &__time {
+        text-align: center;
+        background: $primary;
+        font-weight: bold;
+        font-size: 24px;
+        color: $primary-text;
+        width: 90px;
+
+        @media only screen and (min-width: 768px) {
+            width: 105px;
+        }
+    }
+
+    &__detail {
+        background: $secondary;
+
+        h3 {
+            margin-bottom: 5px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+}
+
+.question-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: auto;
+
+    @media only screen and (min-width: 768px) {
+        width: 50%;
+        float: left;
+    }
+
+    &__question {
+        display: block;
+        border: 2px solid $primary;
+        padding: 20px;
+        border-radius: 3px;
+        position: relative;
+        color: #000;
+        text-decoration: none;
+        transition: all 150ms;
+        margin: 10px 0 10px 0;
+
+        @media only screen and (min-width: 768px) {
+            margin: 10px 20px 10px 0;
+
+            & + .question-list__question {
+                margin: 10px 0 10px 20px;
+            }
+        }
+
+
+        h3 {
+            font-weight: normal;
+        }
+
+        &:after, &:before {
+            top: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            margin-top: -5px;
+            right: 30px;
+            transition: border-top-color 150ms;
+        }
+
+        &:after {
+            border-top-color: #fff;
+            border-width: 10px;
+            margin-right: -10px;
+        }
+
+        &:before {
+            border-top-color: $primary;
+            border-width: 13px;
+            margin-right: -13px;
+        }
+
+        &:hover {
+            background: $primary;
+            color: $primary-text;
+
+            &:before {
+                border-top-color: $primary-text;
+            }
+
+            &:after {
+                border-top-color: $primary;
+            }
+        }
+    }
+
+    &__answer {
+        background: $secondary;
+        padding: 20px;
+        margin: 10px 0;
+
+        @media only screen and (min-width: 768px) {
+            margin: 10px 20px 10px 0;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.sponsors {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: auto;
+    text-align: center;
+
+    img {
+        height: 200px;
+        max-width: 100%;
+    }
+}
