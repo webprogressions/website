@@ -1,0 +1,38 @@
+$base-font-size: 16;
+
+html {
+    font-size: 100%;
+
+	@media only screen and (min-width: 768px) {
+		font-size: 112.5%;
+	}
+}
+
+h1, h2, h3, .h1, .h2, .h3 {
+	font-weight: normal;
+}
+
+h1, .h1 {
+	margin-top: 0px;
+	margin-bottom: 0;
+	font-size: 30px;
+	font-weight: bold;
+
+	@media only screen and (min-width: 768px) {
+		font-size: 60px;
+	}
+}
+
+h2, .h2 {
+	font-size: 30px;
+	margin-bottom: 20px;
+	text-align: center;
+
+	@media only screen and (min-width: 768px) {
+		font-size: 40px;
+	}
+}
+
+h3, .h3 {
+	font-weight: bold;
+}
