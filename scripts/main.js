@@ -16,7 +16,7 @@
 
 	var map = L.mapbox.map('map', 'mapbox.streets');
 	map.scrollWheelZoom.disable();
-	map.setView([51.5224438,-0.086228], 18);
+	map.setView([51.5225321,-0.0856495], 18);
 	var marker = L.marker([51.5225321,-0.0856495]).addTo(map);
-marker.bindPopup("Campus London,  4-5 Bonhill St, Shoreditch, London EC2A 4BX").openPopup();
+marker.bindPopup('<p class="map__title"><strong>Campus London</strong></p><p class="map__address">4-5 Bonhill St, <br>Shoreditch, <br>London <br>EC2A 4BX</p>').openPopup();
 }());
