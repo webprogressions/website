@@ -1,4 +1,6 @@
 (function(){
+	document.body.classList.add('js');
+
 	var questions = Array.from(document.querySelectorAll('.question-list__question'))
 
 	questions.map(function(element) {

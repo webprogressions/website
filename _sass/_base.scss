@@ -7,8 +7,8 @@ body {
     font-family: 'Roboto Slab', 'Helvetica Neue', serif;
 }
 
-.hidden {
-    display: none;
+.center {
+    text-align: center;
 }
 
 .global-header {
@@ -300,6 +300,12 @@ body {
         padding: 20px;
         margin: 10px 0 10px;
 
+        &.hidden {
+            .js & {
+                display: none;
+            }
+        }
+
         @media only screen and (min-width: 768px) {
             margin: 10px 20px 10px 0;
         }
@@ -323,7 +329,7 @@ body {
     }
 }
 
-.map {
+.js .map {
     width: 100%;
     height: 300px;
 
