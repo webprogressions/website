@@ -164,7 +164,21 @@ body {
     list-style: none;
     overflow: auto;
 
-    &__item {
+    &__play-icon {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 15px 0 15px 20px;
+        border-color: transparent transparent transparent #ffffff;
+        margin: 0 auto!important;
+
+
+        @media only screen and (min-width: 768px) {
+            border-width: 20px 0 20px 30px;
+        }
+    }
+
+    &__item-table {
         margin: 0px 0px 10px;
         display: table;
         width: 100%;
@@ -197,7 +211,7 @@ body {
         font-weight: bold;
         font-size: 24px;
         color: $primary-text;
-        width: 90px;
+        width: 50px;
 
         @media only screen and (min-width: 768px) {
             width: 105px;
@@ -217,6 +231,22 @@ body {
 
         p {
             margin: 0;
+        }
+    }
+
+
+    a {
+        text-decoration: none;
+        color: #000;
+
+        &:hover, &:focus, &:active {
+            .schedule__time {
+                background: #1d406b;
+            }
+
+            .schedule__detail {
+                background: #e6e6e6;
+            }
         }
     }
 }
